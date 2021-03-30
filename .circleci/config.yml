@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build:
+  build-test:
     docker:
       # specify the version you desire here
       - image: circleci/node:14.0.0
@@ -9,3 +9,8 @@ jobs:
       - checkout
       - run: npm install
       - run: npm test
+
+workflows:
+  build-test:
+    jobs:
+      - build-test
