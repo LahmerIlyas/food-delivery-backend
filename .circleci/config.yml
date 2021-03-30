@@ -1,15 +1,11 @@
-version: 2.1
-orbs:
-  node: circleci/node@3.0.0
+version: 2
 jobs:
-  build-and-test:
-    executor:
-      name: node/default
+  build:
+    docker:
+      # specify the version you desire here
+      - image: circleci/node:8.9.0
+
     steps:
-      - node/install-packages
-      - run:
-          command: npm run test
-workflows:
-  build-and-test:
-    jobs:
-      - build-and-test
+      - checkout
+      - run: npm install
+      - run: npm test
