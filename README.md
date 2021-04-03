@@ -8,6 +8,13 @@
 - Validate Configuration using Joi
 - Add nest caching module
 
+## Dev Mode
+To delete volume and container of a 
+
+```bash
+sudo docker-compose down -v --rmi all
+```
+
 ## Running the app
 
 ```bash

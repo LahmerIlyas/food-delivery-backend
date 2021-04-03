@@ -10,6 +10,12 @@ export PGUSER="$POSTGRES_USER"
 CREATE DATABASE template_postgis IS_TEMPLATE true;
 EOSQL
 
+# Create the 'app_e2e_test' db
+"${psql[@]}" <<- 'EOSQL'
+CREATE DATABASE app_e2e_test;
+EOSQL
+
+
 # Load PostGIS into both template_database and $POSTGRES_DB
 for DB in template_postgis "$POSTGRES_DB"; do
 	echo "Loading PostGIS extensions into $DB"
