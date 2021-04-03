@@ -19,6 +19,7 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
+    "test:e2e:cov": "jest --config ./test/jest-e2e.json --coverage",
     "db:diagram": "ts-node ./node_modules/@proscom/typeorm-uml/bin/run --format=svg --monochrome ormconfig.json",
     "doc": "compodoc -p tsconfig.json -s -d ./docs",
     "pretypeorm": "(rm ormconfig.json || :) && ts-node -r tsconfig-paths/register src/scripts/write-type-orm-config.ts",

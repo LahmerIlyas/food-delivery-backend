@@ -7,6 +7,13 @@ jobs:
   build-test:
     docker:
       - image: circleci/node:14.0.0
+      - image: circleci/latest-postgis
+        environment:
+          POSTGRES_USER: root
+          POSTGRES_PASSWORD: root
+          POSTGRES_DB: test
+    environment:
+      TEST_DATABASE_URL=postgres://root:root@localhost:5432/test
     steps:
       - checkout
       - run: npm install

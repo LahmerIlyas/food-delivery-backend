@@ -1,0 +1,21 @@
+{
+  "type": "postgres",
+  "url": "postgres://root:root@127.0.0.1:5432/test",
+  "entities": [
+    "src/database/entities/*{.ts,.js}"
+  ],
+  "subscribers": [
+    "src/database/subscribers/*{.ts,.js}"
+  ],
+  "synchronize": false,
+  "migrations": [
+    "dist/migrations/*{.ts,.js}"
+  ],
+  "migrationsTableName": "migrations_typeorm",
+  "migrationsRun": true,
+  "migrationsTransactionMode": "each",
+  "logging": "all",
+  "cli": {
+    "migrationsDir": "migrations"
+  }
+}
