@@ -1,2 +1,2 @@
 web: npm run start:prod
-release: npm run build
+release: npm install && npm run build
