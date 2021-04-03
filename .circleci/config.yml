@@ -7,7 +7,7 @@ jobs:
   build-test:
     docker:
       - image: circleci/node:14.0.0
-      - image: circleci/latest-postgis
+      - image: circleci/postgres:latest-postgis
         environment:
           POSTGRES_USER: root
           POSTGRES_PASSWORD: root
