@@ -23,7 +23,21 @@ export const Configuration = {
       },
     } as TypeOrmModuleOptions,
   sentrydsn: process.env.SENTRY_DSN,
-
+  jwt: {
+    secret: process.env.JWT_SECRET_KEY,
+    signOptions: { expiresIn: '60s' },
+  },
+  multer: {
+    dest: process.env.MULTER_STORAGE_PATH
+  },
+  fbConfig: {
+    clientID: process.env.FACEBOOK_APP_ID,
+    clientSecret: process.env.FACEBOOK_APP_SECRET,
+  },
+  googleConfig: {
+    clientID: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+  }
 };
 
 export const getConfiguration = () => Configuration;
