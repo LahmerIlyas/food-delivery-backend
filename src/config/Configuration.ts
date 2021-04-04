@@ -1,6 +1,8 @@
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 require('dotenv').config();
 
+const isProduction = process.env.NODE_ENV === 'production';
+
 export const Configuration = {
     bcryptSaltRounds: 10,
     port: parseInt(process.env.PORT, 10) || 3000,
@@ -15,6 +17,7 @@ export const Configuration = {
       migrationsRun: true,
       migrationsTransactionMode: 'each',
       logging: 'all',
+      ssl: isProduction,
       cli: {
         migrationsDir: 'migrations',
       },
