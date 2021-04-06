@@ -26,6 +26,7 @@ export class ImagesService {
   }
 
   public async streamImage(req: Request, res: Response){
+    req.url = req.url.replace('/files/images', '');
     this.imageServiceHandler.getHandler()(req, res);
   }
 
