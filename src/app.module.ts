@@ -3,6 +3,10 @@ import { ConfigModule } from '@nestjs/config';
 import { Configuration, getConfiguration } from './config/Configuration';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './modules/auth/auth.module';
+import { join } from 'path';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { FilesModule } from './modules/files/files.module';
+
 
 @Module({
   imports: [
@@ -12,7 +16,13 @@ import { AuthModule } from './modules/auth/auth.module';
       load: [getConfiguration]
     }),
     TypeOrmModule.forRoot(Configuration.database),
-    AuthModule
+    ServeStaticModule.forRoot({
+      rootPath: join(process.cwd(), 'public'),
+      serveRoot: '/public',
+      renderPath: '*'
+    }),
+    AuthModule,
+    FilesModule
   ],
 })
 export class AppModule {}

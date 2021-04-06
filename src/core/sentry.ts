@@ -4,6 +4,7 @@ import { HttpServer } from '@nestjs/common/interfaces/http/http-server.interface
 import { LogLevel } from '@sentry/types';
 
 export function initSentry(app: HttpServer){
+  return
   Sentry.init({
     dsn: "https://6b93116c868343998d44b3575a4b7f7d@o561936.ingest.sentry.io/5699903",
     integrations: [

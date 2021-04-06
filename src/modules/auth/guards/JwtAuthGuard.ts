@@ -11,10 +11,10 @@ export class JwtAuthGuard extends AuthGuard('jwt') {
   private logger = new Logger(JwtAuthGuard.name);
 
   @Inject(AuthService)
-  private authService: AuthService
+  private authService: AuthService;
 
   @InjectRepository(User)
-  private usersRepository: Repository<User>
+  private usersRepository: Repository<User>;
 
   constructor() {
     super();
@@ -29,10 +29,10 @@ export class JwtAuthGuard extends AuthGuard('jwt') {
         throw new UnauthorizedException('Access token is not set');
 
       // get the user id
-      const {id} = await this.authService.validateToken(accessToken);
+      //const {id} = await this.authService.validateToken(accessToken);
 
       // inject the user into the request
-      request.user = await this.usersRepository.findOneOrFail(id);
+      //request.user = await this.usersRepository.findOneOrFail(id);
 
       return true;
     }catch (error){

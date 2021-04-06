@@ -37,6 +37,43 @@ export const Configuration = {
   googleConfig: {
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+  },
+  imagesteam: {
+    log: {
+      warnings: true
+    },
+    processor: {
+      sharp: {
+        cache: false,
+        concurrency: 0,
+        simd: true
+      }
+    },
+    router: {
+      steps: {
+        fm: {
+          name: 'format',
+          f: 'format'
+        }
+      }
+    },
+    storage: {
+      defaults: {
+        driver: 'fs',
+        path: process.env.MULTER_STORAGE_PATH
+      },
+      cache: {
+        path: process.env.MULTER_STORAGE_PATH
+      },
+      cacheOptimized: {
+        path: process.env.MULTER_STORAGE_PATH
+      },
+      cacheTTS: 600,
+      cacheOptimizedTTS: 300,
+    },
+    security: {
+      enabled : false
+    }
   }
 };
 
