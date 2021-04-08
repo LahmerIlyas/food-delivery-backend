@@ -19,11 +19,4 @@ export class File extends BaseEntity{
   @Column({nullable: true})
   mime_type: string;
 
-  @ManyToOne(type => User, {nullable: true, onDelete: 'CASCADE'})
-  @JoinColumn({ name: 'owner_id' })
-  owner: User;
-
-  @Column({name: 'owner_id', nullable: true})
-  owner_id: number;
-
 }

@@ -13,7 +13,7 @@ const users = [
       alt: 'user-profile-picture',
       mime_type: 'image/png',
       name: 'profile.png',
-      size: 1024
+      size: 1024,
     }
   }
 ] as User[];

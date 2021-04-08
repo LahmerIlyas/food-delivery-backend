@@ -17,7 +17,9 @@ export const Configuration = {
       migrationsRun: true,
       migrationsTransactionMode: 'each',
       logging: 'all',
-      ssl: isProduction,
+      extra: {
+        ssl: isProduction
+      },
       cli: {
         migrationsDir: 'migrations',
       },
@@ -63,10 +65,10 @@ export const Configuration = {
         path: process.env.MULTER_STORAGE_PATH
       },
       cache: {
-        path: process.env.MULTER_STORAGE_PATH
+        path: `${process.env.MULTER_STORAGE_PATH}/cache`
       },
       cacheOptimized: {
-        path: process.env.MULTER_STORAGE_PATH
+        path: `${process.env.MULTER_STORAGE_PATH}/cache`
       },
       cacheTTS: 600,
       cacheOptimizedTTS: 300,

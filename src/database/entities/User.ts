@@ -38,7 +38,7 @@ export class User extends BaseEntity {
   @Column({type: 'text', nullable: true, unique: true})
   facebook_id: string;
 
-  @ManyToOne(type => File, {nullable: true, cascade: true})
+  @ManyToOne(type => File, {nullable: true, cascade: ['insert']})
   @JoinColumn({ name: 'avatar_id' })
   avatar: File;
 

@@ -15,7 +15,9 @@
   "migrationsRun": true,
   "migrationsTransactionMode": "each",
   "logging": "all",
-  "ssl": false,
+  "extra": {
+    "ssl": false
+  },
   "cli": {
     "migrationsDir": "migrations"
   }
