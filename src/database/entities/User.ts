@@ -1,6 +1,10 @@
-import { Column, Entity, JoinColumn, ManyToOne } from 'typeorm';
+import { Column, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne, OneToMany } from 'typeorm';
 import { BaseEntity } from './BaseEntity';
 import {File} from './File';
+import { Address } from './Address';
+import { PaymentCard } from './PaymentCard';
+import { MealReview } from './MealReview';
+import { Meal } from './Meal';
 
 export enum UserRole {
   USER = "utilisateur",
@@ -48,4 +52,32 @@ export class User extends BaseEntity {
 
   @Column({type: 'timestamptz', nullable: true})
   last_activity: Date;
+
+  @Column({ default: true })
+  enable_promotional_emails: boolean;
+
+  @Column({ default: true })
+  enable_monthly_newsletter: boolean;
+
+  @Column({ default: true })
+  enable_feedback_collection: boolean;
+
+  @Column({ default: true })
+  enable_discount_notifications: boolean;
+
+  @OneToMany(type => Address, address => address.user)
+  addresses: Address[];
+
+  @OneToMany(type => PaymentCard, card => card.user)
+  payment_cards: PaymentCard[];
+
+  @OneToMany(type => MealReview, review => review.user)
+  meal_reviews: MealReview[];
+
+  @ManyToMany(() => Meal, meal => meal.favorite_users, {
+    cascade: true
+  })
+  @JoinTable()
+  favorite_meals: Meal[];
+
 }

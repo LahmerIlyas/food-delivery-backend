@@ -1,6 +1,6 @@
 {
   "type": "postgres",
-  "url": "postgres://root:root@127.0.0.1:5432/test",
+  "url": "postgres://root:root@127.0.0.1:5432/dev",
   "entities": [
     "src/database/entities/*{.ts,.js}"
   ],
@@ -15,6 +15,7 @@
   "migrationsRun": true,
   "migrationsTransactionMode": "each",
   "logging": "all",
+  "ssl": false,
   "cli": {
     "migrationsDir": "migrations"
   }

@@ -16,41 +16,5 @@
 To delete volume and container of a 
 
 ```bash
-sudo docker-compose down -v --rmi all
+sudo docker-compose down -v
 ```
-
-## Running the app
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-
-## Stay in touch
-
-
-## License
-
-  This project is for learning purposes only. 
