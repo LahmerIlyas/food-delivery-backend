@@ -5,6 +5,7 @@ import { Address } from './Address';
 import { PaymentCard } from './PaymentCard';
 import { MealReview } from './MealReview';
 import { Meal } from './Meal';
+import { Cart } from './Cart';
 
 export enum UserRole {
   USER = "utilisateur",
@@ -37,7 +38,7 @@ export class User extends BaseEntity {
   @Column({type: 'text', nullable: true, unique: true})
   facebook_id: string;
 
-  @ManyToOne(type => File, {nullable: true})
+  @ManyToOne(type => File, {nullable: true, cascade: true})
   @JoinColumn({ name: 'avatar_id' })
   avatar: File;
 
@@ -80,4 +81,6 @@ export class User extends BaseEntity {
   @JoinTable()
   favorite_meals: Meal[];
 
+  @OneToMany(type => Cart, cart => cart.user)
+  carts: Cart[];
 }
