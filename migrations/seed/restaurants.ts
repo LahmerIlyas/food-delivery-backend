@@ -189,6 +189,6 @@ const restaurants = [
   }
 ] as Restaurant[];
 
-async function seedRestaurants(){
-
+export async function seedRestaurants(){
+  await Restaurant.save(restaurants);
 }

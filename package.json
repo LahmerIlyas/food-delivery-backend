@@ -64,7 +64,9 @@
     "swagger-ui-express": "^4.1.6",
     "typeorm": "^0.2.32",
     "typeorm-store": "^1.2.0",
-    "typeorm-uml": "^1.6.2"
+    "typeorm-uml": "^1.6.2",
+    "@nestjsx/crud-typeorm": "latest",
+    "@nestjsx/crud": "latest"
   },
   "devDependencies": {
     "@nestjs/cli": "^7.0.0",
