@@ -22,7 +22,7 @@ export async function setupAdminPanel(app: INestApplication): Promise<void> {
     branding: {
       companyName: 'Dashboard',
       softwareBrothers: false,
-      //logo: Configuration.getLogoURL(),
+      logo: '/files/images/logo.png',
       theme,
     },
     version: {

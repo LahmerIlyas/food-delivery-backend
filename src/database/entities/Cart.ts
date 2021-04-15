@@ -4,7 +4,6 @@ import { User } from './User';
 import { Address } from './Address';
 import { PaymentCard } from './PaymentCard';
 import { Meal } from './Meal';
-import { MealReview } from './MealReview';
 
 
 @Entity()

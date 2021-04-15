@@ -1,11 +1,10 @@
 export const theme: any = {
   colors: {
-    bg: '#eee',
-    primary20: '#CEB7C6',
-    primary40: '#A67F8A',
-    primary60: '#916468',
-    primary80: '#7C4D48',
-    primary100: '#673D2D',
+    bg: '#f7f7f7',
+    primary100: '#503E9D',
+    primary80: '#5756AB',
+    primary60: '#6F7DBA',
+    primary40: '#88A0C7',
+    primary20: '#A2BED4',
   },
-  font: 'Roboto Slab'
 };

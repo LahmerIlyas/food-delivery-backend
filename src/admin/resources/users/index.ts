@@ -4,5 +4,8 @@ export const users = {
   resource: User,
   options: {
     parent: 'Users Management',
+    properties: {
+
+    }
   },
 };
